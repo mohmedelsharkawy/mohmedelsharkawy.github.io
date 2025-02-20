@@ -1,10 +1,8 @@
-<!-- _layouts/default.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>{{ page.title }} | {{ site.title }}</title>
-    <!-- Link to our custom stylesheet -->
     <link
       rel="stylesheet"
       href="{{ '/assets/css/style.css' | relative_url }}"
@@ -14,15 +12,18 @@
     <header class="site-header">
       <nav class="site-nav">
         <div class="nav-content">
-          <!-- Site Title / Logo area -->
+          <!-- Left side: site title -->
           <div class="nav-left">
-            <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+            <a class="site-title" href="{{ '/' | relative_url }}">
+              {{ site.title }}
+            </a>
           </div>
-          <!-- Navigation Links -->
+
+          <!-- Right side: nav links -->
           <div class="nav-right">
             <a href="{{ '/' | relative_url }}">Home</a>
-            <a href="{{ '/publications/' | relative_url }}">Publications</a>
             <a href="{{ '/cv/' | relative_url }}">CV</a>
+            <a href="{{ '/publications/' | relative_url }}">Publications</a>
           </div>
         </div>
       </nav>
@@ -33,7 +34,7 @@
     </main>
 
     <footer class="site-footer">
-      <p>&copy; {{ site.time | date: '%Y' }} - {{ site.title }}</p>
+      <p>&copy; {{ site.time | date: '%Y' }} – {{ site.title }}</p>
     </footer>
   </body>
 </html>
