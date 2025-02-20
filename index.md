@@ -5,24 +5,26 @@ title: "Home"
 
 <div class="hero">
   <img
-    src="/assets/images/your-photo.jpg"
+    src="/assets/images/profile.jpg"
     alt="Profile Photo"
-  >
-  <h1>Your Name</h1>
-  <h2>Short Title (e.g., Researcher, Developer, etc.)</h2>
+  />
+  <h1>Mohamed Elsharkawy, MSc</h1>
+  <h2>PhD Student @ University of Louisville</h2>
 </div>
 
-Welcome to my personal website! I'm a [Your Profession or Role] at [Your Organization].
-Here you'll find information about my work, publications, and CV.
+Hello! Welcome to my personal website. I am a PhD student at the University of Louisville,  
+jointly affiliated with Mansoura University, where I also serve as a Teaching Assistant.  
+My research focuses on **Medical Image Analysis, Machine Learning, and Computer Vision**.
 
-- **Email**: [your_email@example.com](mailto:your_email@example.com)
-- **LinkedIn**: [linkedin.com/in/yourusername](https://linkedin.com/in/yourusername)
-- **GitHub**: [github.com/your-username](https://github.com/your-username)
+**Contact Info**  
+- Email: [mohamed.elsharkawy@louisville.edu](mailto:mohamed.elsharkawy@louisville.edu)  
+- Phone (USA): +1 502-885-0800  
+- Phone (Egypt): +20 1069662911  
 
----
+<hr/>
 
-## About Me
+### Quick Links
+- [View my Full CV](/cv/)  
+- [Browse Publications](/publications/)
 
-I’m currently working on some awesome projects related to Lorem Ipsum. In my free time, I enjoy exploring new technologies, attending conferences, and writing articles.
-
-You can check out my [Publications](/publications/) or download my [CV](/cv/).
+Please feel free to explore my publications and background, and reach out if you’d like to connect!
