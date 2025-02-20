@@ -5,7 +5,7 @@ title: "Home"
 
 <div class="hero">
   <img
-    src="/assets/images/profile.jpg"
+    src="/assets/images/sharkawy.jpg"
     alt="Profile Photo"
   />
   <h1>Mohamed Elsharkawy, MSc</h1>
