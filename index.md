@@ -12,7 +12,7 @@ title: "Home"
   <h2>PhD Student @ University of Louisville</h2>
 </div>
 
-Mohamed Elsharkawy was born in Egypt in 1993. He is currently a Ph.D. student in Computer Science and Engineering and a Graduate Teaching Assistant (GTA) at the Bioengineering Department, speed school of engineering, university of Louisville, USA. He is an Assistant Lecturer with the Information Technology Department, Faculty of Computer and Information Sciences, Mansoura University.
+Mohamed Elsharkawy was born in Egypt in 1993. He is currently a Ph.D. student in Computer Science and Engineering and a Graduate Teaching Assistant (GTA) at the Bioengineering Department, Speed School of Engineering, university of Louisville, USA. He is an assistant lecturer in the information technology department of the Faculty of Computer and Information Sciences at Mansoura University.
 He received his B.Sc. and M.Sc. degrees from the Information Technology Department, Faculty of Computer and Information Sciences, Mansoura University. He worked as a visiting researcher from August 2019 to May 2022 at the bioengineering department, University of Louisville. He has authored/co-authored more than 20 research publications in peer-reviewed reputed journals and Conferences. He has served as a reviewer for various international journals, such as Scientific Reports, IEEE Journal of Biomedical and Health Informatics, IEEE Access, Diagnostics, and Artificial Intelligence Review. 
 
 My research focuses on **Medical Image Analysis, Machine Learning, and Computer Vision**.
