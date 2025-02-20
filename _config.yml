@@ -1,13 +1,7 @@
 # _config.yml
-title: "My Personal Site"
-description: "Personal website built with Jekyll on GitHub Pages."
-# Pick a theme if you'd like (e.g. 'minima'):
-# theme: minima
-
-# Build settings
+title: "Mohamed Elsharkawy, MSc"
+description: "Personal website showcasing research, publications, and CV."
 markdown: kramdown
 plugins: []
-
-# Optional: If you want to deploy at https://your-username.github.io
-url: "https://your-username.github.io"
-baseurl: ""  
+url: "https://sharkawy014700.github.io"
+baseurl: ""
