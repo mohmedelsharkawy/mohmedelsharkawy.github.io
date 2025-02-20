@@ -1,8 +1,6 @@
 /* assets/css/style.css */
 
-/* ----------------------------------
-   GENERAL RESET + BASE STYLES
-------------------------------------- */
+/* RESET + BASE STYLES */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,12 +12,9 @@ body {
   background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
   color: #333;
   line-height: 1.6;
-  margin: 0;
 }
 
-/* ----------------------------------
-   HEADER + NAVIGATION
-------------------------------------- */
+/* HEADER + NAVIGATION */
 .site-header {
   background-color: #334;
   padding: 10px 0;
@@ -39,7 +34,6 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
-  margin-right: 20px;
 }
 
 .site-nav a {
@@ -50,19 +44,17 @@ body {
 }
 
 .site-nav a:hover {
-  color: #FFD700; /* golden hover color */
+  color: #FFD700; /* Gold hover color */
 }
 
-/* ----------------------------------
-   MAIN CONTENT
-------------------------------------- */
+/* MAIN CONTENT WRAPPER */
 .site-content {
   width: 90%;
   max-width: 1000px;
   margin: 40px auto;
   background-color: #fff;
   padding: 20px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
 
@@ -78,9 +70,13 @@ body {
   margin-bottom: 15px;
 }
 
-/* ----------------------------------
-   FOOTER
-------------------------------------- */
+hr {
+  margin: 30px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+/* FOOTER */
 .site-footer {
   text-align: center;
   padding: 15px 0;
@@ -90,9 +86,7 @@ body {
   border-top: 1px solid #ddd;
 }
 
-/* ----------------------------------
-   UTILITY & MISC
-------------------------------------- */
+/* HERO SECTION */
 .hero {
   text-align: center;
   margin-bottom: 40px;
@@ -100,31 +94,25 @@ body {
 
 .hero img {
   border-radius: 50%;
-  width: 150px;
+  width: 160px;
   margin-bottom: 20px;
 }
 
 .hero h1 {
   font-size: 2rem;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .hero h2 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #666;
 }
 
-hr {
-  border: none;
-  border-top: 1px solid #ddd;
-  margin: 30px 0;
-}
-
-/* Links in content */
+/* LINKS IN CONTENT */
 .site-content a {
   color: #0073e6;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: bold;
 }
 .site-content a:hover {
   text-decoration: underline;
