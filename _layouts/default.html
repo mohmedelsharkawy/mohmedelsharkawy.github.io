@@ -1,0 +1,39 @@
+<!-- _layouts/default.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <!-- Link to our custom stylesheet -->
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/style.css' | relative_url }}"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="site-nav">
+        <div class="nav-content">
+          <!-- Site Title / Logo area -->
+          <div class="nav-left">
+            <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+          </div>
+          <!-- Navigation Links -->
+          <div class="nav-right">
+            <a href="{{ '/' | relative_url }}">Home</a>
+            <a href="{{ '/publications/' | relative_url }}">Publications</a>
+            <a href="{{ '/cv/' | relative_url }}">CV</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="site-content">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; {{ site.time | date: '%Y' }} - {{ site.title }}</p>
+    </footer>
+  </body>
+</html>
