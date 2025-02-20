@@ -1,0 +1,131 @@
+/* assets/css/style.css */
+
+/* ----------------------------------
+   GENERAL RESET + BASE STYLES
+------------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ----------------------------------
+   HEADER + NAVIGATION
+------------------------------------- */
+.site-header {
+  background-color: #334;
+  padding: 10px 0;
+}
+
+.site-nav .nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.site-title {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.site-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+.site-nav a:hover {
+  color: #FFD700; /* golden hover color */
+}
+
+/* ----------------------------------
+   MAIN CONTENT
+------------------------------------- */
+.site-content {
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.site-content h1,
+.site-content h2,
+.site-content h3 {
+  margin-bottom: 15px;
+  margin-top: 20px;
+  color: #333;
+}
+
+.site-content p {
+  margin-bottom: 15px;
+}
+
+/* ----------------------------------
+   FOOTER
+------------------------------------- */
+.site-footer {
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+  color: #777;
+  background-color: #f8f8f8;
+  border-top: 1px solid #ddd;
+}
+
+/* ----------------------------------
+   UTILITY & MISC
+------------------------------------- */
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero img {
+  border-radius: 50%;
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.hero h2 {
+  font-size: 1.3rem;
+  color: #666;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 30px 0;
+}
+
+/* Links in content */
+.site-content a {
+  color: #0073e6;
+  text-decoration: none;
+  font-weight: bold;
+}
+.site-content a:hover {
+  text-decoration: underline;
+}
