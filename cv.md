@@ -8,8 +8,8 @@ permalink: /cv/
 
 ## Contact Information
 
-- **Address:** 890 Eastern Parkway, Apt \#4, Louisville, KY 40217, USA  
-- **Email:** [mohamed.elsharkawy@louisville.edu](mailto:mohamed.elsharkawy@louisville.edu); [mohmed.elsharkawy@mans.edu.eg](mailto:mohmed.elsharkawy@mans.edu.eg)  
+- **Address:**  2301 S. Third St. Paul C.Lutz Hall, Room 419 J. B. Speed School of Engineering University of Louisville, KY, USA  
+- **Email:** [mohamed.elsharkawy@louisville.edu](mailto:mohamed.elsharkawy@louisville.edu) -- [mohmed.elsharkawy@mans.edu.eg](mailto:mohmed.elsharkawy@mans.edu.eg)  
 - **Phone (USA):** +1 502-885-0800  
 - **Phone (Egypt):** +20 1069662911  
 
@@ -122,9 +122,9 @@ For a complete breakdown of publications (journals, conferences, etc.), please s
 
 ## Software and Skills
 
-- **Programming:** MATLAB (highly competent), Python (very good), HTML  
+- **Programming:** Python (highly competent), Matlab (very good), R 
 - **Operating Systems:** Windows  
-- **Toolkits:** Microsoft Office, LaTeX, OpenOffice  
+- **Toolkits:** Microsoft Office, LaTeX, Overleaf  
 
 ---
 
