@@ -120,7 +120,7 @@ title: "Home"
 <!-- QUICK LINKS -->
 <div class="quick-links">
   <div class="quick-link-item">
-    <a href="/assets/files/ElsharkawyCV.pdf" target="_blank">
+    <a href="/assets/files/elsharkawycv.pdf" target="_blank">
       Download Full CV (PDF)
     </a>
   </div>
