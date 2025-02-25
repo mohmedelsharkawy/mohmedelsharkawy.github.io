@@ -4,143 +4,290 @@ title: "CV"
 permalink: /cv/
 ---
 
-# Curriculum Vitae
+<!-- Inline styles specific to the CV page -->
+<style>
+/* Container that wraps all CV content */
+.cv-container {
+  background-color: #fafafa;
+  padding: 20px;
+  border-radius: 8px;
+}
 
-## Contact Information
+/* Generic "card" styling for each section */
+.cv-section {
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  border-radius: 8px;
+}
 
-- **Address:**  2301 S. Third St. Paul C.Lutz Hall, Room 419 J. B. Speed School of Engineering University of Louisville, KY, USA  
-- **Email:** [mohamed.elsharkawy@louisville.edu](mailto:mohamed.elsharkawy@louisville.edu) -- [mohmed.elsharkawy@mans.edu.eg](mailto:mohmed.elsharkawy@mans.edu.eg)  
-- **Phone (USA):** +1 502-885-0800  
-- **Phone (Egypt):** +20 1069662911  
+.cv-section h2 {
+  margin-top: 0;
+  margin-bottom: 1em;
+  color: #444;
+  font-size: 1.4rem;
+  border-left: 5px solid #334;
+  padding-left: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
----
+.cv-section h3 {
+  margin-top: 0;
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
 
-## Research Interests
-- Medical Image Analysis  
-- Machine Learning  
-- Deep Learning  
-- Image Segmentation  
-- Computer Vision  
+.cv-section ul {
+  list-style: square;
+  margin-left: 20px;
+}
 
----
+.cv-section li {
+  margin-bottom: 5px;
+}
 
-## Education
+/* Subsection headings (e.g., Education, Teaching, etc.) */
+.cv-subtitle {
+  font-weight: bold;
+  color: #2c2c2c;
+  font-size: 1.1rem;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  border-left: 3px solid #ffbbec;
+  padding-left: 8px;
+}
 
-**Ph.D. (2023–Current)**  
-*University of Louisville, Louisville, KY*  
-- Thesis Advisors: Profs. Ayman El-Baz, Adel Elmaghraby
+/* A nice horizontal rule style */
+.cv-section hr {
+  border: none;
+  border-top: 1px dashed #ccc;
+  margin: 20px 0;
+}
 
-**M.Sc. (2016–2022)**  
-*University of Louisville (USA) jointly with Mansoura University (Egypt)*  
-- Thesis: *"Role of Machine Learning in Early Detection of Retinal Diseases"*  
-- Advisors: Profs. Ayman El-Baz, Ahmed Atwan, Eman Eldaydamoni
+/* For "Research Interests" bullet points, etc. */
+ul.interests-list {
+  list-style: circle;
+  margin-left: 25px;
+}
 
-**B.S. (2011–2015)**  
-*Information Technology, Faculty of Computers and Information Sciences, Mansoura University (Egypt)*  
-- Senior Project: *"Smart Intensive Care Unit"*  
-- Cumulative Grade: Distinction with Degree of Honor (90.2\%), GPA = 3.7  
-- Department Rank: 1st among 160 students
+/* Contact box styling */
+.contact-info {
+  background-color: #f0f8ff;
+  border-left: 5px solid #334;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
 
----
+/* Info item styling */
+.info-item {
+  margin-bottom: 5px;
+}
 
-## Teaching Experience
+/* Link styling within content */
+.cv-container a {
+  color: #0073e6;
+  text-decoration: none;
+  font-weight: 600;
+}
 
-### Teaching Assistant (Full Time)  
-**Mansoura University, Egypt** &nbsp; (Mar 2015 – Present)  
-- Prepared, delivered, and organized laboratory/tutorial sessions  
-- Graded quizzes and mid-term exams  
-- Assisted in teaching:  
-  - Logic Circuits  
-  - Electronic Fundamentals  
-  - Network Programming  
-  - Object-Oriented Programming  
-  - Mobile Computing  
-  - Fundamentals of Programming  
-  - Fundamentals of Statistics  
+.cv-container a:hover {
+  text-decoration: underline;
+}
+</style>
 
-### Teaching Assistant (Full Time)  
-**University of Louisville, USA** &nbsp; (Jan 2023 – Present)  
-- Prepared, delivered, and organized lab/tutorial sessions  
-- Graded quizzes and mid-term exams  
-- Assisted in teaching undergraduate courses:  
-  - Bioengineering Measurements and Biosystems & Signals  
-  - Computer Tools for Medical Image Analysis  
+<div class="cv-container">
+  
+  <!-- MAIN HEADING -->
+  <div class="cv-section">
+    <h2>Curriculum Vitae</h2>
+    <div class="contact-info">
+      <div class="info-item"><strong>Address:</strong> 2301 S. Third St. Paul C.Lutz Hall, Room 419, University of Louisville, KY, USA</div>
+      <div class="info-item">
+        <strong>Email:</strong> 
+        <a href="mailto:mohamed.elsharkawy@louisville.edu">mohamed.elsharkawy@louisville.edu</a> 
+        | 
+        <a href="mailto:mohmed.elsharkawy@mans.edu.eg">mohmed.elsharkawy@mans.edu.eg</a>
+      </div>
+      <div class="info-item"><strong>Phone (USA):</strong> +1 502-885-0800</div>
+      <div class="info-item"><strong>Phone (Egypt):</strong> +20 1069662911</div>
+    </div>
+  </div>
 
----
+  <!-- RESEARCH INTERESTS -->
+  <div class="cv-section">
+    <h2>Research Interests</h2>
+    <ul class="interests-list">
+      <li>Medical Image Analysis</li>
+      <li>Machine Learning</li>
+      <li>Deep Learning</li>
+      <li>Image Segmentation</li>
+      <li>Computer Vision</li>
+    </ul>
+  </div>
 
-## Honors and Awards
+  <!-- EDUCATION -->
+  <div class="cv-section">
+    <h2>Education</h2>
+    
+    <p class="cv-subtitle">Ph.D. (2023–Current)</p>
+    <p>
+      <em>University of Louisville, Louisville, KY</em><br/>
+      Thesis Advisors: Profs. Ayman El-Baz, Adel Elmaghraby
+    </p>
+    
+    <p class="cv-subtitle">M.Sc. (2016–2022)</p>
+    <p>
+      <em>University of Louisville (USA) jointly with Mansoura University (Egypt)</em><br/>
+      Thesis: <em>"Role of Machine Learning in Early Detection of Retinal Diseases"</em><br/>
+      Advisors: Profs. Ayman El-Baz, Ahmed Atwan, Eman Eldaydamoni
+    </p>
+    
+    <p class="cv-subtitle">B.S. (2011–2015)</p>
+    <p>
+      <em>Information Technology, Faculty of Computers and Information Sciences, Mansoura University (Egypt)</em><br/>
+      Senior Project: <em>"Smart Intensive Care Unit"</em><br/>
+      Cumulative Grade: Distinction with Degree of Honor (90.2%), GPA = 3.7<br/>
+      Department Rank: 1st among 160 students
+    </p>
+  </div>
 
-- **Exemplary Research Scholarship Award**, University of Louisville (April 2024)  
-- **Second Place** Doctoral Engineering Student Awards, Research! Louisville (Oct 2023)  
-- **Best Dissertation Award** (Master's), Mansoura University (July 2023)  
-- **Second Place** Master Engineering Student Awards, Research! Louisville (Sept 2021)  
-- **Exemplary Research Scholarship Award**, University of Louisville (April 2023)  
-- Finalist, **3-Minute Thesis (3MT)** Competition, University of Louisville (2023)  
-- **Ranked first (Honors)** in B.Sc. (2015), Mansoura University  
-- **College excellence award** for all four undergraduate years (2011–2015)  
+  <!-- TEACHING EXPERIENCE -->
+  <div class="cv-section">
+    <h2>Teaching Experience</h2>
+    
+    <h3>Mansoura University, Egypt (Mar 2015 – Present)</h3>
+    <ul>
+      <li>Prepared, delivered, and organized laboratory/tutorial sessions</li>
+      <li>Graded quizzes and mid-term exams</li>
+      <li>Assisted in teaching:
+        <ul>
+          <li>Logic Circuits</li>
+          <li>Electronic Fundamentals</li>
+          <li>Network Programming</li>
+          <li>Object-Oriented Programming</li>
+          <li>Mobile Computing</li>
+          <li>Fundamentals of Programming</li>
+          <li>Fundamentals of Statistics</li>
+        </ul>
+      </li>
+    </ul>
 
----
+    <hr/>
 
-## Scientific Publications and Identifiers
+    <h3>University of Louisville, USA (Jan 2023 – Present)</h3>
+    <ul>
+      <li>Prepared, delivered, and organized lab/tutorial sessions</li>
+      <li>Graded quizzes and mid-term exams</li>
+      <li>Assisted in teaching undergraduate courses:
+        <ul>
+          <li>Bioengineering Measurements and Biosystems & Signals</li>
+          <li>Computer Tools for Medical Image Analysis</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 
-I have authored/co-authored **15+ peer-reviewed publications** in top journals and conferences, mainly in the fields of medical image analysis, AI, and machine learning.
+  <!-- HONORS & AWARDS -->
+  <div class="cv-section">
+    <h2>Honors and Awards</h2>
+    <ul>
+      <li><strong>Exemplary Research Scholarship Award</strong>, University of Louisville (April 2024)</li>
+      <li><strong>Second Place</strong> Doctoral Engineering Student Awards, Research! Louisville (Oct 2023)</li>
+      <li><strong>Best Dissertation Award</strong> (Master's), Mansoura University (July 2023)</li>
+      <li><strong>Second Place</strong> Master Engineering Student Awards, Research! Louisville (Sept 2021)</li>
+      <li><strong>Exemplary Research Scholarship Award</strong>, University of Louisville (April 2023)</li>
+      <li>Finalist, <strong>3-Minute Thesis (3MT)</strong> Competition, University of Louisville (2023)</li>
+      <li><strong>Ranked first (Honors)</strong> in B.Sc. (2015), Mansoura University</li>
+      <li><strong>College excellence award</strong> for all four undergraduate years (2011–2015)</li>
+    </ul>
+  </div>
 
-- [Google Scholar](https://scholar.google.com/citations?user=IknnHU4AAAAJ&hl=en)  
-- [Web of Science / Publons](https://publons.com/researcher/2993425/mohamed-elsharkawy/)  
-- [Scopus](https://www.scopus.com/authid/detail.uri?authorId=57217217044)  
-- [ResearchGate](https://www.researchgate.net/profile/Mohamed-Elsharkawy-11)  
-- [Mansoura University Profile](https://mymans.mans.edu.eg/cv/4ce56d50-10b2-11ec-8d2b-a1fabb74302b/2)  
-- [Loop](https://loop.frontiersin.org/people/1018324/overview)  
-- [ORCID](https://orcid.org/0000-0001-9242-9709)
+  <!-- SCIENTIFIC PUBLICATIONS & IDENTIFIERS -->
+  <div class="cv-section">
+    <h2>Scientific Publications and Identifiers</h2>
+    <p>
+      I have authored/co-authored <strong>15+ peer-reviewed publications</strong> in top journals and conferences, mainly in the fields of medical image analysis, AI, and machine learning.
+    </p>
+    <ul>
+      <li><a href="https://scholar.google.com/citations?user=IknnHU4AAAAJ&hl=en" target="_blank">Google Scholar</a></li>
+      <li><a href="https://publons.com/researcher/2993425/mohamed-elsharkawy/" target="_blank">Web of Science / Publons</a></li>
+      <li><a href="https://www.scopus.com/authid/detail.uri?authorId=57217217044" target="_blank">Scopus</a></li>
+      <li><a href="https://www.researchgate.net/profile/Mohamed-Elsharkawy-11" target="_blank">ResearchGate</a></li>
+      <li><a href="https://mymans.mans.edu.eg/cv/4ce56d50-10b2-11ec-8d2b-a1fabb74302b/2" target="_blank">Mansoura University Profile</a></li>
+      <li><a href="https://loop.frontiersin.org/people/1018324/overview" target="_blank">Loop</a></li>
+      <li><a href="https://orcid.org/0000-0001-9242-9709" target="_blank">ORCID</a></li>
+    </ul>
+    <p>For a complete breakdown of publications (journals, conferences, etc.), please see the <a href="/publications/">Publications page</a>.</p>
+  </div>
 
-For a complete breakdown of publications (journals, conferences, etc.), please see the [Publications page](/publications/).
+  <!-- PATENTS & DISCLOSURES -->
+  <div class="cv-section">
+    <h2>Patents and Disclosures</h2>
+    <ol>
+      <li>
+        <strong>M. Elsharkawy</strong>, A. El-Baz, A. Shalaby, A. Soliman, A. Sharafeldeen, A. Mahmoud, 
+        H. Sandhu, G. Giridharan. 
+        <em>"Assessment of Pulmonary Function in Coronavirus Patient,"</em> 
+        U.S. Patent Application #63/156,171 (In Progress)
+      </li>
+    </ol>
+  </div>
 
----
+  <!-- PROFESSIONAL ACTIVITIES, SERVICE, AND AFFILIATIONS -->
+  <div class="cv-section">
+    <h2>Professional Activities, Service, and Affiliations</h2>
+    <p><strong>Reviewer</strong> for 15+ journals and conferences, including:</p>
+    <ul>
+      <li>IEEE Journal on Biomedical and Health Informatics</li>
+      <li><em>Scientific Reports</em></li>
+      <li><em>Artificial Intelligence in Medicine</em></li>
+      <li><em>Artificial Intelligence Review</em></li>
+      <li><em>Computers in Biology and Medicine</em></li>
+      <li><em>PLOS ONE</em></li>
+      <li><em>ISA Transactions</em></li>
+      <li><em>IEEE Access</em></li>
+      <li><em>Diagnostics</em></li>
+      <li>...plus major conferences like ICPR, MICCAI, ISBI</li>
+    </ul>
+  </div>
 
-## Patents and Disclosures
+  <!-- SOFTWARE & SKILLS -->
+  <div class="cv-section">
+    <h2>Software and Skills</h2>
+    <ul>
+      <li><strong>Programming:</strong> Python (highly competent), Matlab (very good), R</li>
+      <li><strong>Operating Systems:</strong> Windows</li>
+      <li><strong>Toolkits:</strong> Microsoft Office, LaTeX, Overleaf</li>
+    </ul>
+  </div>
 
-1. **M. Elsharkawy**, A. El-Baz, A. Shalaby, A. Soliman, A. Sharafeldeen, A. Mahmoud, H. Sandhu, G. Giridharan.  
-   *"Assessment of Pulmonary Function in Coronavirus Patient," U.S. Patent Application #63/156,171.* (In Progress)
+  <!-- LANGUAGES -->
+  <div class="cv-section">
+    <h2>Languages</h2>
+    <ul>
+      <li><strong>Arabic:</strong> Native</li>
+      <li><strong>English:</strong> Very Good</li>
+    </ul>
+  </div>
 
----
+  <!-- ACTIVITIES & HOBBIES -->
+  <div class="cv-section">
+    <h2>Activities and Hobbies</h2>
+    <ul>
+      <li>Tennis</li>
+      <li>Soccer</li>
+      <li>Traveling</li>
+      <li>Social relationships</li>
+    </ul>
+  </div>
 
-## Professional Activities, Service, and Affiliations
-
-- **Reviewer** for 15+ journals and conferences, including:  
-  - IEEE Journal on Biomedical and Health Informatics  
-  - *Scientific Reports*  
-  - *Artificial Intelligence in Medicine*  
-  - *Artificial Intelligence Review*  
-  - *Computers in Biology and Medicine*  
-  - *PLOS ONE*  
-  - *ISA Transactions*  
-  - *IEEE Access*  
-  - *Diagnostics*  
-  - … and major conferences like ICPR, MICCAI, ISBI  
-
----
-
-## Software and Skills
-
-- **Programming:** Python (highly competent), Matlab (very good), R 
-- **Operating Systems:** Windows  
-- **Toolkits:** Microsoft Office, LaTeX, Overleaf  
-
----
-
-## Languages
-
-- **Arabic:** Native  
-- **English:** Very Good  
-
----
-
-## Activities and Hobbies
-
-- Tennis, Soccer, Traveling, Social relationships
-
----
-
-## References
-
-Available upon request.
+  <!-- REFERENCES -->
+  <div class="cv-section">
+    <h2>References</h2>
+    <p>Available upon request.</p>
+  </div>
+</div>
