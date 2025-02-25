@@ -19,9 +19,9 @@ title: "Home"
 
 .hero img {
   border: 3px solid #fff;
-  border-radius: 50%;
-  width: 180px;
-  height: 180px;
+  border-radius: 70%;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
 }
 
