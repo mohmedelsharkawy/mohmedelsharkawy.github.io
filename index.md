@@ -17,21 +17,29 @@ title: "Home"
   margin-bottom: 30px;
 }
 
+/* 
+   Updated: 
+   - Removed fixed 'height: 250px;'
+   - Removed 'object-fit: cover;'
+   - Now uses height: auto to avoid cropping
+*/
 .hero img {
-  border: 3px solid #fff;
-  border-radius: 70%;
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 250px;
+  height: auto;
 }
 
+/* Adjusted font sizes slightly */
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-top: 20px;
 }
 
 .hero h2 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   margin-top: 10px;
   font-weight: 400;
 }
