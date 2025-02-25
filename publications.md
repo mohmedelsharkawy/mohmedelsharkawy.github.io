@@ -97,7 +97,6 @@ Below is a detailed list of my **peer-reviewed journal articles, conference proc
 
 [10] F. Taher, A. Soliman, H. Kandil, A. Sharafeldeen, **M. Elsharkawy**, H. Abdeltawab, A. Mahmoud, A. Shalaby, and A. El-Baz, “A Segmentation Framework for Accurate Extraction of Cerebral Vasculature using a Convolution Neural Network,” In: *Biomedical Engineering Society Annual Scientific Meeting (BMES’20)*, Virtual Meeting, USA, October 14–17, 2020. (e-poster)
 
-[11] I. Jouia, **M. Elsharkawy**, A. Sharafeldeen, A. Mahmoud, A. Khalil, M. Ghazal, H. Sandhu, and A. El-Baz, “The effects of Age and Diabetic Retinopathy,” In: *Biomedical Engineering Society Annual Scientific Meeting (BMES’20)*, Virtual Meeting, USA, October 14–17, 2020. (e-poster)
 ---
 
 **Note**: For a complete overview of my research identifiers, please see my [Google Scholar](https://scholar.google.com/citations?user=IknnHU4AAAAJ&hl=en), [Web of Science](https://publons.com/researcher/2993425/mohamed-elsharkawy/), etc.
