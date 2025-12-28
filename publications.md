@@ -6,137 +6,126 @@ permalink: /publications/
 
 <style>
 /* ============================
-   Publications Page – Teal/Orange Theme
+   Publications – Modern, Fast, Filterable
+   Theme: Teal / Orange / Indigo
    ============================ */
-
 :root{
-  --bg:#ffffff;
   --text:#0f172a;
   --muted:#475569;
 
   --card:rgba(255,255,255,0.92);
   --border:rgba(15,23,42,0.10);
-
   --shadow:0 14px 34px rgba(0,0,0,0.09);
   --shadow-sm:0 7px 18px rgba(0,0,0,0.08);
   --radius:16px;
 
-  /* NEW COLORS */
-  --accent1:#14b8a6; /* teal */
-  --accent2:#f97316; /* orange */
-  --accent3:#6366f1; /* indigo */
+  --teal:#14b8a6;
+  --orange:#f97316;
+  --indigo:#6366f1;
   --link:#0ea5e9;
 
-  --pill-bg:rgba(15,23,42,0.04);
-  --pill-border:rgba(15,23,42,0.10);
+  --chip-bg:rgba(15,23,42,0.05);
+  --chip-border:rgba(15,23,42,0.10);
 }
-
 @media (prefers-color-scheme: dark){
   :root{
-    --bg:#0b1220;
     --text:#e5e7eb;
     --muted:#a1a1aa;
 
     --card:rgba(17,24,39,0.74);
     --border:rgba(229,231,235,0.12);
-
     --shadow:0 18px 48px rgba(0,0,0,0.40);
     --shadow-sm:0 12px 28px rgba(0,0,0,0.38);
-
     --link:#7dd3fc;
 
-    --pill-bg:rgba(229,231,235,0.07);
-    --pill-border:rgba(229,231,235,0.12);
+    --chip-bg:rgba(229,231,235,0.07);
+    --chip-border:rgba(229,231,235,0.12);
   }
 }
 
 .pub-wrap{
-  max-width: 1100px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: 18px 14px 34px;
   color: var(--text);
 }
-
-.pub-wrap a{ color: var(--link); text-decoration: none; }
-.pub-wrap a:hover{ text-decoration: underline; }
+.pub-wrap a{ color: var(--link); text-decoration:none; }
+.pub-wrap a:hover{ text-decoration:underline; }
 
 /* HERO */
-.pub-hero{
+.hero{
   position: relative;
   overflow: hidden;
-  border-radius: calc(var(--radius) + 8px);
+  border-radius: calc(var(--radius) + 10px);
   padding: 28px 18px;
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
   background:
-    radial-gradient(1100px 520px at 15% 10%, color-mix(in srgb, var(--accent1) 55%, transparent), transparent 60%),
-    radial-gradient(900px 480px at 85% 20%, color-mix(in srgb, var(--accent2) 45%, transparent), transparent 60%),
-    radial-gradient(900px 480px at 60% 120%, color-mix(in srgb, var(--accent3) 40%, transparent), transparent 60%),
-    linear-gradient(135deg, rgba(20,184,166,0.18), rgba(249,115,22,0.12));
+    radial-gradient(1100px 520px at 15% 10%, rgba(20,184,166,0.42), transparent 60%),
+    radial-gradient(900px 480px at 85% 20%, rgba(249,115,22,0.30), transparent 60%),
+    radial-gradient(900px 480px at 60% 120%, rgba(99,102,241,0.28), transparent 60%),
+    linear-gradient(135deg, rgba(20,184,166,0.12), rgba(249,115,22,0.10));
 }
-
-.pub-hero:before{
+.hero:before{
   content:"";
-  position:absolute;
-  inset:0;
+  position:absolute; inset:0;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.10'/%3E%3C/svg%3E");
-  opacity: .18;
-  pointer-events:none;
+  opacity: .16; pointer-events:none;
 }
+.hero-inner{ position:relative; text-align:center; display:grid; gap:10px; }
+.hero h1{ margin:0; font-size:2.15rem; letter-spacing:-0.02em; line-height:1.1; color:#fff; }
+.hero p{ margin:0; color:rgba(255,255,255,0.93); font-size:1.05rem; line-height:1.65; }
 
-.pub-hero-inner{
-  position: relative;
-  text-align: center;
-  display: grid;
-  gap: 10px;
+.actions{
+  margin-top: 10px;
+  display:flex; flex-wrap:wrap; gap:10px;
+  justify-content:center;
 }
-
-.pub-hero h1{
-  margin: 0;
-  font-size: 2.25rem;
-  letter-spacing: -0.02em;
-  line-height: 1.12;
-  color: #ffffff;
-}
-
-.pub-hero p{
-  margin: 0;
-  color: rgba(255,255,255,0.92);
-  font-size: 1.05rem;
-  line-height: 1.65;
-}
-
-.pub-chips{
-  margin-top: 14px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-.chip{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding: 8px 12px;
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  padding: 10px 14px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,0.26);
   background: rgba(255,255,255,0.13);
+  color: rgba(255,255,255,0.95) !important;
+  text-decoration:none !important;
+  font-weight:800;
+  backdrop-filter: blur(8px);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.btn:hover{ transform: translateY(-2px); box-shadow: var(--shadow); }
+
+/* FILTER BAR */
+.filterbar{
+  margin-top: 14px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:center;
+}
+.input, .select{
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.28);
+  background: rgba(255,255,255,0.14);
   color: rgba(255,255,255,0.95);
-  font-size: 0.92rem;
+  padding: 10px 12px;
+  font-weight: 700;
+  outline: none;
   backdrop-filter: blur(8px);
 }
+.input::placeholder{ color: rgba(255,255,255,0.85); }
+.select option{ color:#111; }
 
-/* Layout */
-.pub-row{
-  display: grid;
-  grid-template-columns: 1fr 320px;
+/* LAYOUT */
+.grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
   margin-top: 16px;
 }
-@media (max-width: 980px){ .pub-row{ grid-template-columns: 1fr; } }
+@media (max-width: 980px){ .grid{ grid-template-columns: 1fr; } }
 
-/* Cards */
+/* CARDS */
 .card{
   background: var(--card);
   border: 1px solid var(--border);
@@ -145,14 +134,6 @@ permalink: /publications/
   padding: 16px;
   backdrop-filter: blur(8px);
 }
-
-.card h2{
-  margin: 0 0 12px;
-  font-size: 1.05rem;
-  letter-spacing: -0.01em;
-}
-
-/* Section head */
 .section-head{
   display:flex;
   align-items: baseline;
@@ -162,12 +143,8 @@ permalink: /publications/
   border-bottom: 1px solid var(--border);
   margin-bottom: 12px;
 }
-.section-head h3{
-  margin: 0;
-  font-size: 1.18rem;
-  letter-spacing: -0.01em;
-}
-.section-badge{
+.section-head h2{ margin:0; font-size: 1.18rem; letter-spacing:-0.01em; }
+.badge{
   font-size: 0.85rem;
   color: var(--muted);
   padding: 6px 10px;
@@ -176,25 +153,7 @@ permalink: /publications/
   background: rgba(127,127,127,0.06);
 }
 
-/* Venue subheaders */
-.venue{
-  margin: 14px 0 10px;
-  padding-left: 12px;
-  border-left: 4px solid var(--accent1);
-  font-size: 1.02rem;
-  letter-spacing: -0.01em;
-}
-.venue.orange{ border-left-color: var(--accent2); }
-.venue.indigo{ border-left-color: var(--accent3); }
-.venue.gray{ border-left-color: rgba(100,116,139,0.7); }
-
-.venue small{
-  color: var(--muted);
-  font-weight: 600;
-  margin-left: 6px;
-}
-
-/* Publication items */
+/* LIST ITEMS */
 .pub-list{
   list-style:none;
   padding-left:0;
@@ -202,260 +161,613 @@ permalink: /publications/
   display:grid;
   gap: 12px;
 }
-
 .pub-item{
   padding: 12px 12px;
   border-radius: 14px;
   border: 1px solid var(--border);
   background: rgba(127,127,127,0.04);
 }
-.pub-item:hover{
-  border-color: color-mix(in srgb, var(--accent1) 35%, var(--border));
+.pub-item:hover{ border-color: rgba(20,184,166,0.35); }
+
+.tagrow{
+  margin-top: 10px;
+  display:flex;
+  flex-wrap:wrap;
+  gap: 8px;
 }
+.tag{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--chip-border);
+  background: var(--chip-bg);
+  font-size: 0.86rem;
+  color: var(--text);
+}
+.tag.fa{ border-color: color-mix(in srgb, var(--orange) 42%, var(--chip-border)); }
+.tag.j{ border-color: color-mix(in srgb, var(--indigo) 42%, var(--chip-border)); }
+.tag.c{ border-color: color-mix(in srgb, var(--teal) 50%, var(--chip-border)); }
+.tag.b{ border-color: rgba(100,116,139,0.35); }
 
-.pub-title{ font-weight: 800; }
-
-/* Your name highlight */
 .me{
   font-weight: 900;
-  color: color-mix(in srgb, var(--accent1) 75%, var(--text));
+  color: color-mix(in srgb, var(--teal) 75%, var(--text));
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
 }
 
-/* First-author badge */
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding: 5px 10px;
-  border-radius: 999px;
-  border: 1px solid var(--pill-border);
-  background: var(--pill-bg);
-  font-size: 0.85rem;
-  color: var(--text);
-  margin-left: 8px;
-}
-.badge.fa{
-  border-color: color-mix(in srgb, var(--accent2) 40%, var(--pill-border));
-}
-
-/* Actions */
-.pub-actions{
-  margin-top: 8px;
-  display:flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.pill{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid var(--pill-border);
-  background: var(--card);
-  box-shadow: var(--shadow-sm);
-  font-size: 0.88rem;
-  text-decoration: none !important;
-  color: var(--text) !important;
-}
-.pill:hover{ border-color: color-mix(in srgb, var(--accent3) 30%, var(--pill-border)); }
-
-/* Sidebar */
-.sidebar .mini{
-  color: var(--muted);
-  line-height: 1.6;
-  margin: 0 0 12px;
-}
-.side-links{ display:grid; gap: 10px; }
-.side-btn{
-  display:block;
-  padding: 10px 12px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: var(--card);
-  box-shadow: var(--shadow-sm);
-  text-decoration:none !important;
-  color: var(--text) !important;
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-}
-.side-btn:hover{
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
-  border-color: color-mix(in srgb, var(--accent1) 35%, var(--border));
-}
-.side-btn small{ display:block; color: var(--muted); margin-top: 3px; }
-
 .note{
-  margin-top: 16px;
+  margin-top: 14px;
   color: var(--muted);
   line-height: 1.7;
 }
+
+/* DETAILS */
+details{
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(127,127,127,0.04);
+  padding: 10px 12px;
+  margin-top: 12px;
+}
+details summary{
+  cursor: pointer;
+  font-weight: 900;
+  list-style: none;
+}
+details summary::-webkit-details-marker{ display:none; }
+details summary:after{
+  content:"▾";
+  float:right;
+  color: var(--muted);
+}
+details[open] summary:after{ content:"▴"; }
 </style>
 
 <div class="pub-wrap">
 
   <!-- HERO -->
-  <section class="pub-hero">
-    <div class="pub-hero-inner">
+  <section class="hero">
+    <div class="hero-inner">
       <h1>Publications</h1>
       <p>
-        Selected peer-reviewed journal articles, conference papers, book chapters, and abstracts.
-        For the most up-to-date record, please see Google Scholar.
+        A curated, high-impact selection of my work. <strong>First-author papers are emphasized</strong>.
+        (Full record is on Google Scholar / CV.)
       </p>
-      <div class="pub-chips" aria-label="Highlights">
-        <span class="chip">Medical Imaging AI</span>
-        <span class="chip">Fundus / OCT / OCTA</span>
-        <span class="chip">Classification & Segmentation</span>
-        <span class="chip">Explainable AI (XAI)</span>
-        <span class="chip">First-author highlights</span>
+
+      <div class="actions">
+        <a class="btn" href="/assets/files/elsharkawycv.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+        <a class="btn" href="https://scholar.google.com/citations?user=IknnHU4AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a class="btn" href="/cv/">CV</a>
+      </div>
+
+      <div class="filterbar">
+        <input id="pubSearch" class="input" type="text" placeholder="Search (e.g., OCT, AMD, transformer, review)..." />
+        <select id="yearFilter" class="select">
+          <option value="all">All years</option>
+          <option value="2025">2025</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+          <option value="2020">2020</option>
+        </select>
+        <select id="typeFilter" class="select">
+          <option value="all">All types</option>
+          <option value="journal">Journal</option>
+          <option value="conference">Conference</option>
+          <option value="review">Review</option>
+          <option value="chapter">Book chapter</option>
+          <option value="patent">Patent</option>
+          <option value="abstract">Abstract</option>
+        </select>
+        <label style="display:flex; align-items:center; gap:8px; color:#fff; font-weight:800;">
+          <input id="firstOnly" type="checkbox" />
+          First-author only
+        </label>
       </div>
     </div>
   </section>
 
-  <div class="pub-row">
+  <div class="grid">
 
-    <!-- MAIN -->
-    <main>
+    <!-- =========================
+         FIRST-AUTHOR JOURNALS (ORDER YOU REQUESTED)
+         JBHI → Diagnostics → IEEE Access → Scientific Reports → (then Sensors)
+         ========================= -->
+    <section class="card" id="first-journals">
+      <div class="section-head">
+        <h2>Journal Articles (First Author • Selected)</h2>
+        <span class="badge">priority order</span>
+      </div>
 
-      <!-- FIRST-AUTHOR HIGHLIGHTS (ORDERED AS REQUESTED) -->
-      <section class="card pub-section" id="first-author">
-        <div class="section-head">
-          <h3>First-Author Journal Highlights</h3>
-          <span class="section-badge">ordered by venue</span>
-        </div>
+      <ul class="pub-list">
 
-        <!-- 1) JBHI -->
-        <div class="venue indigo">IEEE JBHI <small>(first author)</small></div>
-        <ul class="pub-list">
-          <li class="pub-item">
-            <span class="me">Elsharkawy, M.</span>, Sharafeldeen A., Khalifa, F., Soliman, A., Elnakib, A., Ghazal, M., Sewelam, A., Thanos, A., Sandhu, H.S., El-Baz, A.
-            <span class="pub-title">A Clinically Explainable AI-Based Grading System for Age-Related Macular Degeneration Using Optical Coherence Tomography.</span>
-            <em>IEEE Journal of Biomedical and Health Informatics</em>, 2024.
-            <span class="badge fa">First Author</span>
-            <div class="pub-actions">
-              <a class="pill" href="https://doi.org/10.1109/JBHI.2024.3355329" target="_blank" rel="noopener">DOI</a>
-            </div>
-          </li>
-        </ul>
+        <!-- JBHI 2024 -->
+        <li class="pub-item" data-year="2024" data-type="journal" data-first="yes">
+          <div>
+            <span class="me">Elsharkawy, M.</span>, Sharafeldeen A., Khalifa F., Soliman A., et al.
+            <strong>A clinically explainable AI-based grading system for age-related macular degeneration using optical coherence tomography.</strong>
+            <em>IEEE Journal of Biomedical and Health Informatics (JBHI)</em>, 28(4):2079–2090, 2024.
+          </div>
+          <div class="tagrow">
+            <span class="tag fa">First Author</span>
+            <span class="tag j">Top Journal</span>
+            <span class="tag">OCT</span>
+            <a class="tag" href="https://doi.org/10.1109/JBHI.2024.3355329" target="_blank" rel="noopener">DOI</a>
+          </div>
+        </li>
 
-        <!-- 2) Diagnostics -->
-        <div class="venue orange">Diagnostics <small>(first author)</small></div>
-        <ul class="pub-list">
-          <li class="pub-item">
-            <span class="me">Elsharkawy, M.</span>, Sharafeldeen, A., Soliman, A., Khalifa, F., Ghazal, M., El-Daydamony, E., Atwan, A., Sandhu, H.S., El-Baz, A.
-            <span class="pub-title">A Novel Computer-Aided Diagnostic System for Early Detection of Diabetic Retinopathy Using 3D-OCT Higher-Order Spatial Appearance Model.</span>
-            <em>Diagnostics</em>, 12(2), 461, 2022.
-            <span class="badge fa">First Author</span>
-          </li>
-          <li class="pub-item">
-            <span class="me">Elsharkawy, M.</span>, Elrazzaz, M., Ghazal, M., Alhalabi, M., Soliman, A., Mahmoud, A., et al., El-Baz, A.
-            <span class="pub-title">Role of Optical Coherence Tomography Imaging in Predicting Progression of Age-Related Macular Disease: A Survey.</span>
-            <em>Diagnostics</em>, 11(12), 2313, 2021.
-            <span class="badge fa">First Author</span>
-          </li>
-        </ul>
+        <!-- Diagnostics 2022 -->
+        <li class="pub-item" data-year="2022" data-type="journal" data-first="yes">
+          <div>
+            <span class="me">Elsharkawy, M.</span>, Sharafeldeen A., Soliman A., Khalifa F., et al.
+            <strong>A novel computer-aided diagnostic system for early detection of diabetic retinopathy using 3D-OCT higher-order spatial appearance model.</strong>
+            <em>Diagnostics</em>, 12(2):461, 2022.
+          </div>
+          <div class="tagrow">
+            <span class="tag fa">First Author</span>
+            <span class="tag j">Journal</span>
+            <span class="tag">3D-OCT</span>
+            <span class="tag">DR</span>
+          </div>
+        </li>
 
-        <!-- 3) IEEE Access -->
-        <div class="venue">IEEE Access <small>(co-author listed in CV)</small></div>
-        <ul class="pub-list">
-          <li class="pub-item">
-            Abdelhalim, I., Nadmid, N., <span class="me">Elsharkawy, M.</span>, Ghazal, M., Mahmoud, A., El-Baz, A.
-            <span class="pub-title">Mask-UnMask Regions (MUMR) Framework for Classifying AMD Grades Using Inter-Regional Interaction Analysis.</span>
+        <!-- Diagnostics 2021 (Survey) -->
+        <li class="pub-item" data-year="2021" data-type="journal" data-first="yes">
+          <div>
+            <span class="me">Elsharkawy, M.</span>, Elrazzaz M., Ghazal M., et al.
+            <strong>Role of optical coherence tomography imaging in predicting progression of age-related macular disease: A survey.</strong>
+            <em>Diagnostics</em>, 11(12):2313, 2021.
+          </div>
+          <div class="tagrow">
+            <span class="tag fa">First Author</span>
+            <span class="tag j">Journal</span>
+            <span class="tag">Survey</span>
+            <span class="tag">AMD</span>
+          </div>
+        </li>
+
+        <!-- IEEE Access 2025 -->
+        <li class="pub-item" data-year="2025" data-type="journal" data-first="yes">
+          <div>
+            <span class="me">Elsharkawy, M.</span>, Abdelhalim I., Mahmoud A., Gamal A., et al.
+            <strong>Fused-AETNet: A variational transformer-based framework for diabetic retinopathy classification using OCT biomarkers.</strong>
             <em>IEEE Access</em>, 2025.
-            <span class="badge">Co-author</span>
-          </li>
-          <li class="pub-item">
-            El-Den, N.N., <span class="me">Elsharkawy, M.</span>, Saleh, I., et al.
-            <span class="pub-title">Seg-Swin: A Dual-Attention Transformer Model for Advanced AMD Classification and Lesion Detection Using Color Fundus Imaging.</span>
-            <em>IEEE Access</em>, 2025.
-            <span class="badge">Co-author</span>
-          </li>
-        </ul>
+          </div>
+          <div class="tagrow">
+            <span class="tag fa">First Author</span>
+            <span class="tag j">Journal</span>
+            <span class="tag">Transformer</span>
+            <span class="tag">OCT biomarkers</span>
+          </div>
+        </li>
 
-        <!-- 4) Scientific Reports -->
-        <div class="venue gray">Scientific Reports <small>(first author)</small></div>
-        <ul class="pub-list">
-          <li class="pub-item">
-            <span class="me">Elsharkawy, M.</span>, Sharafeldeen, A., Taher, F., Shalaby, A., Soliman, A., Mahmoud, A., et al., El-Baz, A.
-            <span class="pub-title">Early Assessment of Lung Function in Coronavirus Patients Using Invariant Markers from Chest X-Rays Images.</span>
-            <em>Scientific Reports</em>, 11(1), 2021.
-            <span class="badge fa">First Author</span>
-          </li>
-        </ul>
-      </section>
+        <!-- Scientific Reports 2021 -->
+        <li class="pub-item" data-year="2021" data-type="journal" data-first="yes">
+          <div>
+            <span class="me">Elsharkawy, M.</span>, Sharafeldeen A., Taher F., et al.
+            <strong>Early assessment of lung function in coronavirus patients using invariant markers from chest X-rays images.</strong>
+            <em>Scientific Reports</em>, 11(1):12095, 2021.
+          </div>
+          <div class="tagrow">
+            <span class="tag fa">First Author</span>
+            <span class="tag j">High-Visibility Journal</span>
+            <span class="tag">CXR</span>
+            <span class="tag">COVID-19</span>
+          </div>
+        </li>
 
-      <!-- Patents -->
-      <section class="card pub-section" id="patents">
-        <div class="section-head">
-          <h3>Patents and Disclosures</h3>
-          <span class="section-badge">1 item</span>
-        </div>
-        <ul class="pub-list">
-          <li class="pub-item">
-            A. S. El-Baz, A. Shalaby, <span class="me">M. Elsharkawy</span>, et al.<br/>
-            <em>"ASSESSMENT OF PULMONARY FUNCTION IN CORONAVIRUS PATIENT,"</em> U.S. Patent 12,217,432 (Feb. 2025).
-          </li>
-        </ul>
-      </section>
+        <!-- Sensors 2022 -->
+        <li class="pub-item" data-year="2022" data-type="journal" data-first="yes">
+          <div>
+            <span class="me">Elsharkawy, M.</span>, Elrazzaz M., Sharafeldeen A., et al.
+            <strong>The role of different retinal imaging modalities in predicting progression of diabetic retinopathy: A survey.</strong>
+            <em>Sensors</em>, 22(9):3490, 2022.
+          </div>
+          <div class="tagrow">
+            <span class="tag fa">First Author</span>
+            <span class="tag j">Journal</span>
+            <span class="tag">Survey</span>
+            <span class="tag">DR</span>
+          </div>
+        </li>
 
-      <!-- FULL JOURNAL LIST (keep extending) -->
-      <section class="card pub-section" id="journals">
-        <div class="section-head">
-          <h3>Peer-Reviewed Journal Articles</h3>
-          <span class="section-badge">extendable list</span>
-        </div>
-
-        <p class="note" style="margin-top:0;">
-          First-author papers are visually emphasized by underlining my name.
-        </p>
-
-        <ul class="pub-list">
-          <!-- You can paste your full journal list here exactly like before -->
-          <li class="pub-item">
-            El-Den, N.N., <span class="me">Elsharkawy, M.</span>, Saleh, I., Ghazal, M., Khalil, A., Haq, M.Z., Sewelam, A., Mahdi, H., El-Baz, A., 2024.
-            <span class="pub-title">AI-based methods for detecting and classifying age-related macular degeneration: a comprehensive review.</span>
-            <em>Artificial Intelligence Review</em>, 57(9), 237.
-          </li>
-          <!-- ... add the rest ... -->
-        </ul>
-      </section>
+      </ul>
 
       <p class="note">
-        <strong>Note:</strong> For the complete and updated record, please see my
-        <a href="https://scholar.google.com/citations?user=IknnHU4AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-        and
-        <a href="https://publons.com/researcher/2993425/mohamed-elsharkawy/" target="_blank" rel="noopener">Web of Science</a>.
+        (This section is intentionally “selected + ordered”. The complete list is on Google Scholar.)
       </p>
+    </section>
 
-    </main>
-
-    <!-- SIDEBAR -->
-    <aside class="card sidebar">
-      <h2>Quick Navigation</h2>
-      <p class="mini">
-        Jump to a section, or use external profiles for the most up-to-date list.
-      </p>
-
-      <div class="side-links">
-        <a class="side-btn" href="#first-author">First-Author Highlights
-          <small>JBHI → Diagnostics → Access → Sci Rep</small>
-        </a>
-        <a class="side-btn" href="#patents">Patents & Disclosures
-          <small>U.S. patent</small>
-        </a>
-        <a class="side-btn" href="#journals">Journal Articles
-          <small>Full list (extendable)</small>
-        </a>
-
-        <a class="side-btn" href="https://scholar.google.com/citations?user=IknnHU4AAAAJ&hl=en" target="_blank" rel="noopener">
-          Google Scholar
-          <small>Most complete & updated</small>
-        </a>
+    <!-- =========================
+         FIRST-AUTHOR CONFERENCES (SELECTED)
+         ========================= -->
+    <section class="card" id="first-conferences">
+      <div class="section-head">
+        <h2>Conference Proceedings (First Author • Selected)</h2>
+        <span class="badge">top venues first</span>
       </div>
-    </aside>
+
+      <ul class="pub-list">
+
+        <!-- ICIP 2025 CrossDR -->
+        <li class="pub-item" data-year="2025" data-type="conference" data-first="yes">
+          <div>
+            <span class="me">Elsharkawy, M.</span>, Abdelhalim I., Taher F., et al.
+            <strong>CrossDR: Bridging 2D and 3D features for diabetic retinopathy classification using context-aware cross-attention.</strong>
+            <em>IEEE International Conference on Image Processing (ICIP)</em>, 2025.
+          </div>
+          <div class="tagrow">
+            <span class="tag fa">First Author</span>
+            <span class="tag c">Major IEEE Conf</span>
+            <span class="tag">Cross-attention</span>
+            <span class="tag">2D+3D</span>
+          </div>
+        </li>
+
+        <!-- ICPR 2024 TransNetOCT -->
+        <li class="pub-item" data-year="2024" data-type="conference" data-first="yes">
+          <div>
+            <span class="me">Elsharkawy, M.</span>, Abdelhalim I., Ghazal M., et al.
+            <strong>TransNetOCT: An efficient transformer-based model for 3D-OCT segmentation using prior shape.</strong>
+            <em>International Conference on Pattern Recognition (ICPR)</em>, 2024.
+          </div>
+          <div class="tagrow">
+            <span class="tag fa">First Author</span>
+            <span class="tag c">Major PR Conf</span>
+            <span class="tag">Segmentation</span>
+            <span class="tag">3D-OCT</span>
+          </div>
+        </li>
+
+        <!-- ISBI 2025 ISGM-DR -->
+        <li class="pub-item" data-year="2025" data-type="conference" data-first="yes">
+          <div>
+            <span class="me">Elsharkawy, M.</span>, Abdelhalim I., Ghazal M., Mahmoud A., Sandhu H.S., El-Baz A.
+            <strong>ISGM-DR: Important slice-guided model for diabetic retinopathy diagnosis using 3D-OCT images.</strong>
+            <em>IEEE ISBI</em>, 2025.
+          </div>
+          <div class="tagrow">
+            <span class="tag fa">First Author</span>
+            <span class="tag c">Top Biomedical Imaging</span>
+            <span class="tag">3D-OCT</span>
+          </div>
+        </li>
+
+        <!-- ISBI 2025 OCT-Trans -->
+        <li class="pub-item" data-year="2025" data-type="conference" data-first="yes">
+          <div>
+            <span class="me">Elsharkawy, M.</span>, Abdelhalim I., Ghazal M., Mahmoud A., et al.
+            <strong>OCT-Trans: A novel transformer backbone with multimodal feature extraction in OCT-based retinal disease classification.</strong>
+            <em>IEEE ISBI</em>, 2025.
+          </div>
+          <div class="tagrow">
+            <span class="tag fa">First Author</span>
+            <span class="tag c">Top Biomedical Imaging</span>
+            <span class="tag">Transformer</span>
+            <span class="tag">OCT</span>
+          </div>
+        </li>
+
+        <!-- ISBI 2022 -->
+        <li class="pub-item" data-year="2022" data-type="conference" data-first="yes">
+          <div>
+            <span class="me">Elsharkawy, M.</span>, Sharafeldeen A., Soliman A., et al.
+            <strong>Diabetic retinopathy diagnostic CAD system using 3D-OCT higher-order spatial appearance model.</strong>
+            <em>IEEE ISBI</em>, 2022.
+          </div>
+          <div class="tagrow">
+            <span class="tag fa">First Author</span>
+            <span class="tag c">Top Biomedical Imaging</span>
+            <span class="tag">3D-OCT</span>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- =========================
+         REVIEW PAPERS (HIGH-IMPACT)
+         ========================= -->
+    <section class="card" id="reviews">
+      <div class="section-head">
+        <h2>Review Papers (Selected)</h2>
+        <span class="badge">high-impact</span>
+      </div>
+
+      <ul class="pub-list">
+
+        <li class="pub-item" data-year="2025" data-type="review" data-first="no">
+          <div>
+            Saleh I., El-Den N.N., <span class="me">Elsharkawy, M.</span>, et al.
+            <strong>AI-based methods for diagnosing and grading diabetic retinopathy: A comprehensive review.</strong>
+            <em>Artificial Intelligence in Medicine</em>, 2025.
+          </div>
+          <div class="tagrow">
+            <span class="tag j">Top Review Venue</span>
+            <span class="tag">DR</span>
+            <span class="tag">Survey</span>
+          </div>
+        </li>
+
+        <li class="pub-item" data-year="2024" data-type="review" data-first="no">
+          <div>
+            El-Den N.N., <span class="me">Elsharkawy, M.</span>, Saleh I., et al.
+            <strong>AI-based methods for detecting and classifying age-related macular degeneration: A comprehensive review.</strong>
+            <em>Artificial Intelligence Review</em>, 57(9):237, 2024.
+          </div>
+          <div class="tagrow">
+            <span class="tag j">High-Impact Review</span>
+            <span class="tag">AMD</span>
+            <span class="tag">Survey</span>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- =========================
+         BOOK CHAPTERS (FIRST AUTHOR)
+         ========================= -->
+    <section class="card" id="chapters">
+      <div class="section-head">
+        <h2>Book Chapters (First Author)</h2>
+        <span class="badge">IOP Publishing</span>
+      </div>
+
+      <ul class="pub-list">
+
+        <li class="pub-item" data-year="2023" data-type="chapter" data-first="yes">
+          <div>
+            <span class="me">Elsharkawy, M.</span>, Sharafeldeen A., Soliman A., et al.
+            <strong>Early identification of diabetic retinopathy through a computer-assisted diagnostic system and a higher-order spatial appearance model of 3D-OCT.</strong>
+            <em>Photo Acoustic and Optical Coherence Tomography Imaging (Vol. 1)</em>, IOP Publishing, 2023.
+          </div>
+          <div class="tagrow">
+            <span class="tag fa">First Author</span>
+            <span class="tag b">Book Chapter</span>
+            <span class="tag">DR</span>
+            <span class="tag">3D-OCT</span>
+          </div>
+        </li>
+
+        <li class="pub-item" data-year="2023" data-type="chapter" data-first="yes">
+          <div>
+            <span class="me">Elsharkawy, M.</span>, Soliman A., Mahmoud A., et al.
+            <strong>Prevention of age-related macular degeneration disease: current strategies and future directions.</strong>
+            <em>Photo Acoustic and Optical Coherence Tomography Imaging (Vol. 1)</em>, IOP Publishing, 2023.
+          </div>
+          <div class="tagrow">
+            <span class="tag fa">First Author</span>
+            <span class="tag b">Book Chapter</span>
+            <span class="tag">AMD</span>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- =========================
+         PATENT
+         ========================= -->
+    <section class="card" id="patent">
+      <div class="section-head">
+        <h2>Patent</h2>
+        <span class="badge">selected</span>
+      </div>
+
+      <ul class="pub-list">
+        <li class="pub-item" data-year="2025" data-type="patent" data-first="no">
+          <div>
+            El-Baz A.S., Shalaby A., <span class="me">Elsharkawy, M.</span>, et al.
+            <strong>Assessment of pulmonary function in coronavirus patients.</strong>
+            <em>US Patent 12,217,432</em>, Feb 2025.
+          </div>
+          <div class="tagrow">
+            <span class="tag b">Patent</span>
+            <span class="tag">Inventor</span>
+          </div>
+        </li>
+      </ul>
+
+      <p class="note">
+        If you want: I can add the patent number as a clickable link to the USPTO page.
+      </p>
+    </section>
+
+    <!-- =========================
+         SELECTED CO-AUTHORED HIGH-IMPACT (COLLAPSIBLE)
+         ========================= -->
+    <section class="card" id="coauthored">
+      <div class="section-head">
+        <h2>Selected Co-Authored (High-Impact)</h2>
+        <span class="badge">optional</span>
+      </div>
+
+      <details>
+        <summary>Show selected co-authored journal + conference papers</summary>
+
+        <ul class="pub-list" style="margin-top:12px;">
+
+          <!-- AJO -->
+          <li class="pub-item" data-year="2020" data-type="journal" data-first="no">
+            <div>
+              Sandhu H.S., Elmogy M., Sharafeldeen A.T., <span class="me">Elsharkawy, M.</span>, et al.
+              <strong>Automated diagnosis of diabetic retinopathy using clinical biomarkers, OCT, and OCT angiography.</strong>
+              <em>American Journal of Ophthalmology</em>, 2020.
+            </div>
+            <div class="tagrow">
+              <span class="tag j">Top Clinical Journal</span>
+              <span class="tag">OCT/OCTA</span>
+              <span class="tag">DR</span>
+            </div>
+          </li>
+
+          <!-- Medical Physics retinal layers -->
+          <li class="pub-item" data-year="2021" data-type="journal" data-first="no">
+            <div>
+              Sleman A.A., Soliman A., <span class="me">Elsharkawy, M.</span>, et al.
+              <strong>A novel 3D segmentation approach for extracting retinal layers from OCT images.</strong>
+              <em>Medical Physics</em>, 48(4):1584–1595, 2021.
+            </div>
+            <div class="tagrow">
+              <span class="tag j">Top Journal</span>
+              <span class="tag">Segmentation</span>
+              <span class="tag">OCT</span>
+            </div>
+          </li>
+
+          <!-- Scientific Reports DR (Sharafeldeen first) -->
+          <li class="pub-item" data-year="2021" data-type="journal" data-first="no">
+            <div>
+              Sharafeldeen A., <span class="me">Elsharkawy, M.</span>, et al.
+              <strong>Precise higher-order reflectivity and morphology models for early diagnosis of diabetic retinopathy using OCT images.</strong>
+              <em>Scientific Reports</em>, 11:4730, 2021.
+            </div>
+            <div class="tagrow">
+              <span class="tag j">High-Visibility Journal</span>
+              <span class="tag">OCT</span>
+              <span class="tag">DR</span>
+            </div>
+          </li>
+
+          <!-- ICIP 2023 -->
+          <li class="pub-item" data-year="2023" data-type="conference" data-first="no">
+            <div>
+              Aboudessouki A., Ali K.M., <span class="me">Elsharkawy, M.</span>, et al.
+              <strong>Automated diagnosis of breast cancer using deep learning-based whole slide image analysis of molecular biomarkers.</strong>
+              <em>IEEE ICIP</em>, 2023.
+            </div>
+            <div class="tagrow">
+              <span class="tag c">Major IEEE Conf</span>
+              <span class="tag">WSI</span>
+              <span class="tag">Breast cancer</span>
+            </div>
+          </li>
+
+          <!-- IEEE Access 2025 Seg-Swin (coauthored) -->
+          <li class="pub-item" data-year="2025" data-type="journal" data-first="no">
+            <div>
+              El-Den N.N., <span class="me">Elsharkawy, M.</span>, et al.
+              <strong>Seg-Swin: A dual-attention transformer model for advanced AMD classification and lesion detection using color fundus imaging.</strong>
+              <em>IEEE Access</em>, 2025.
+            </div>
+            <div class="tagrow">
+              <span class="tag j">Journal</span>
+              <span class="tag">Fundus</span>
+              <span class="tag">AMD</span>
+            </div>
+          </li>
+
+        </ul>
+      </details>
+
+      <p class="note">
+        I kept this section short (only higher-impact / representative items).
+      </p>
+    </section>
+
+    <!-- =========================
+         ABSTRACTS (COLLAPSIBLE)
+         ========================= -->
+    <section class="card" id="abstracts">
+      <div class="section-head">
+        <h2>Abstracts / Proceedings</h2>
+        <span class="badge">ARVO / IOVS</span>
+      </div>
+
+      <details>
+        <summary>Show abstracts</summary>
+
+        <ul class="pub-list" style="margin-top:12px;">
+
+          <li class="pub-item" data-year="2021" data-type="abstract" data-first="yes">
+            <div>
+              <span class="me">Elsharkawy, M.</span>, et al.
+              <strong>Automated diagnosis and grading of dry AMD using OCT imaging.</strong>
+              <em>Investigative Ophthalmology & Visual Science (IOVS)</em>, 62(8):107–107, 2021.
+            </div>
+            <div class="tagrow">
+              <span class="tag fa">First Author</span>
+              <span class="tag">Abstract</span>
+              <span class="tag">OCT</span>
+              <span class="tag">AMD</span>
+            </div>
+          </li>
+
+          <li class="pub-item" data-year="2024" data-type="abstract" data-first="no">
+            <div>
+              Haq M.Z., El-Den N.N., <span class="me">Elsharkawy, M.</span>, et al.
+              <strong>Scale-adaptive integrated BiT-autoencoder for diagnosing AMD using fundus images.</strong>
+              <em>IOVS</em>, 65(7):5663–5663, 2024.
+            </div>
+            <div class="tagrow">
+              <span class="tag">Abstract</span>
+              <span class="tag">Fundus</span>
+              <span class="tag">AMD</span>
+            </div>
+          </li>
+
+          <li class="pub-item" data-year="2025" data-type="abstract" data-first="no">
+            <div>
+              Saleh I., <span class="me">Elsharkawy, M.</span>, et al.
+              <strong>Explainable automated framework for diagnosing DR and AMD using OCT scans.</strong>
+              <em>IOVS</em>, 66(10):PB0022–PB0022, 2025.
+            </div>
+            <div class="tagrow">
+              <span class="tag">Abstract</span>
+              <span class="tag">OCT</span>
+              <span class="tag">DR + AMD</span>
+            </div>
+          </li>
+
+        </ul>
+      </details>
+
+      <p class="note">
+        If you prefer, we can hide this whole section to keep the page “very high-impact only”.
+      </p>
+    </section>
 
   </div>
 </div>
+
+<script>
+(function(){
+  const search = document.getElementById('pubSearch');
+  const year = document.getElementById('yearFilter');
+  const type = document.getElementById('typeFilter');
+  const firstOnly = document.getElementById('firstOnly');
+  const items = Array.from(document.querySelectorAll('.pub-item'));
+
+  function norm(s){ return (s || '').toLowerCase(); }
+
+  function apply(){
+    const q = norm(search.value);
+    const y = year.value;
+    const t = type.value;
+    const f = firstOnly.checked;
+
+    items.forEach(it => {
+      const text = norm(it.innerText);
+      const itY = it.getAttribute('data-year') || '';
+      const itT = it.getAttribute('data-type') || '';
+      const itF = it.getAttribute('data-first') || 'no';
+
+      const okQ = !q || text.includes(q);
+      const okY = (y === 'all') || (itY === y);
+      const okT = (t === 'all') || (itT === t);
+      const okF = !f || (itF === 'yes');
+
+      it.style.display = (okQ && okY && okT && okF) ? '' : 'none';
+    });
+  }
+
+  [search, year, type, firstOnly].forEach(el => el.addEventListener('input', apply));
+  apply();
+})();
+</script>
