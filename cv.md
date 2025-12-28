@@ -4,290 +4,622 @@ title: "CV"
 permalink: /cv/
 ---
 
-<!-- Inline styles specific to the CV page -->
 <style>
-/* Container that wraps all CV content */
-.cv-container {
-  background-color: #fafafa;
-  padding: 20px;
-  border-radius: 8px;
+/* ============================
+   CV Page – Clean + Modern (Teal/Orange/Indigo)
+   - Responsive
+   - Dark-mode support
+   - Sticky table-of-contents on desktop
+   - Collapsible long lists (Teaching, Reviewing)
+   ============================ */
+
+:root{
+  --bg:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+
+  --card:rgba(255,255,255,0.92);
+  --border:rgba(15,23,42,0.10);
+
+  --shadow:0 14px 34px rgba(0,0,0,0.09);
+  --shadow-sm:0 7px 18px rgba(0,0,0,0.08);
+  --radius:16px;
+
+  /* Theme */
+  --accent1:#14b8a6; /* teal */
+  --accent2:#f97316; /* orange */
+  --accent3:#6366f1; /* indigo */
+  --link:#0ea5e9;
+
+  --chip-bg:rgba(15,23,42,0.05);
+  --chip-border:rgba(15,23,42,0.10);
 }
 
-/* Generic "card" styling for each section */
-.cv-section {
-  background-color: #fff;
-  margin-bottom: 20px;
-  padding: 20px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-  border-radius: 8px;
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0b1220;
+    --text:#e5e7eb;
+    --muted:#a1a1aa;
+
+    --card:rgba(17,24,39,0.74);
+    --border:rgba(229,231,235,0.12);
+
+    --shadow:0 18px 48px rgba(0,0,0,0.40);
+    --shadow-sm:0 12px 28px rgba(0,0,0,0.38);
+
+    --link:#7dd3fc;
+
+    --chip-bg:rgba(229,231,235,0.07);
+    --chip-border:rgba(229,231,235,0.12);
+  }
 }
 
-.cv-section h2 {
-  margin-top: 0;
-  margin-bottom: 1em;
-  color: #444;
-  font-size: 1.4rem;
-  border-left: 5px solid #334;
-  padding-left: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.cv-wrap{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 14px 34px;
+  color: var(--text);
 }
 
-.cv-section h3 {
-  margin-top: 0;
-  color: #555;
-  font-size: 1.1rem;
-  margin-bottom: 10px;
+.cv-wrap a{ color: var(--link); text-decoration: none; }
+.cv-wrap a:hover{ text-decoration: underline; }
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 16px;
+  backdrop-filter: blur(8px);
 }
 
-.cv-section ul {
-  list-style: square;
-  margin-left: 20px;
+/* HERO */
+.cv-hero{
+  position: relative;
+  overflow: hidden;
+  border-radius: calc(var(--radius) + 8px);
+  padding: 22px 18px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  background:
+    radial-gradient(1100px 520px at 15% 10%, rgba(20,184,166,0.40), transparent 60%),
+    radial-gradient(900px 480px at 85% 20%, rgba(249,115,22,0.28), transparent 60%),
+    radial-gradient(900px 480px at 60% 120%, rgba(99,102,241,0.25), transparent 60%),
+    linear-gradient(135deg, rgba(20,184,166,0.12), rgba(249,115,22,0.10));
 }
 
-.cv-section li {
-  margin-bottom: 5px;
+.cv-hero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.10'/%3E%3C/svg%3E");
+  opacity: .16;
+  pointer-events:none;
 }
 
-/* Subsection headings (e.g., Education, Teaching, etc.) */
-.cv-subtitle {
-  font-weight: bold;
-  color: #2c2c2c;
-  font-size: 1.1rem;
-  margin-top: 1em;
-  margin-bottom: 0.5em;
-  border-left: 3px solid #ffbbec;
-  padding-left: 8px;
+.cv-hero-inner{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
 }
 
-/* A nice horizontal rule style */
-.cv-section hr {
-  border: none;
-  border-top: 1px dashed #ccc;
-  margin: 20px 0;
+.cv-hero h1{
+  margin: 0;
+  font-size: 2.05rem;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
-/* For "Research Interests" bullet points, etc. */
-ul.interests-list {
-  list-style: circle;
-  margin-left: 25px;
+.cv-hero .subtitle{
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.6;
+  margin-top: 2px;
 }
 
-/* Contact box styling */
-.contact-info {
-  background-color: #f0f8ff;
-  border-left: 5px solid #334;
-  padding: 15px;
-  border-radius: 5px;
-  margin-bottom: 15px;
+/* ACTION BUTTONS */
+.actions{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
 }
 
-/* Info item styling */
-.info-item {
-  margin-bottom: 5px;
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(127,127,127,0.06);
+  box-shadow: var(--shadow-sm);
+  color: var(--text) !important;
+  text-decoration: none !important;
+  font-weight: 700;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.btn:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: rgba(20,184,166,0.35);
+}
+.btn.primary{
+  background: rgba(20,184,166,0.12);
+  border-color: rgba(20,184,166,0.35);
 }
 
-/* Link styling within content */
-.cv-container a {
-  color: #0073e6;
-  text-decoration: none;
-  font-weight: 600;
+/* LAYOUT */
+.cv-layout{
+  display:grid;
+  grid-template-columns: 1fr 320px;
+  gap: 16px;
+  margin-top: 16px;
+}
+@media (max-width: 980px){
+  .cv-layout{ grid-template-columns: 1fr; }
 }
 
-.cv-container a:hover {
-  text-decoration: underline;
+/* TOC */
+.toc{
+  position: sticky;
+  top: 14px;
+  align-self: start;
+}
+.toc h2{
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+.toc a{
+  display:block;
+  padding: 9px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(127,127,127,0.04);
+  text-decoration: none !important;
+  color: var(--text) !important;
+  margin-bottom: 8px;
+  transition: transform .2s ease, border-color .2s ease;
+}
+.toc a:hover{
+  transform: translateY(-1px);
+  border-color: rgba(99,102,241,0.35);
+}
+
+/* SECTION HEADERS */
+.section-head{
+  display:flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+.section-head h2{
+  margin: 0;
+  font-size: 1.18rem;
+  letter-spacing: -0.01em;
+}
+.badge{
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(127,127,127,0.06);
+}
+
+/* CONTACT GRID */
+.contact-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 14px;
+  margin-top: 10px;
+}
+@media (max-width: 720px){
+  .contact-grid{ grid-template-columns: 1fr; }
+}
+.kv{
+  border: 1px solid var(--border);
+  background: rgba(127,127,127,0.04);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+.kv .k{ font-weight: 800; }
+.kv .v{ color: var(--muted); margin-top: 4px; line-height: 1.5; }
+
+/* CHIPS */
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+.chip{
+  display:inline-flex;
+  align-items:center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-border);
+  color: var(--text);
+  font-size: 0.92rem;
+}
+
+/* TIMELINE ITEM */
+.item{
+  border: 1px solid var(--border);
+  background: rgba(127,127,127,0.04);
+  border-radius: 14px;
+  padding: 12px 12px;
+  margin-top: 10px;
+}
+.item .top{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 10px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.item .role{
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+.item .dates{
+  color: var(--muted);
+  font-weight: 700;
+}
+.item .meta{
+  color: var(--muted);
+  line-height: 1.6;
+  margin-top: 6px;
+}
+.item ul{
+  margin: 10px 0 0 18px;
+}
+.item li{ margin: 6px 0; line-height: 1.55; }
+
+/* DETAILS */
+details{
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(127,127,127,0.04);
+  padding: 10px 12px;
+  margin-top: 10px;
+}
+details summary{
+  cursor: pointer;
+  font-weight: 900;
+  list-style: none;
+}
+details summary::-webkit-details-marker{ display:none; }
+details summary:after{
+  content:"▾";
+  float:right;
+  color: var(--muted);
+}
+details[open] summary:after{ content:"▴"; }
+.note{
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 10px 0 0;
+}
+
+/* PRINT (optional) */
+@media print{
+  .toc, .actions{ display:none !important; }
+  .card{ box-shadow:none !important; }
+  a{ text-decoration: none !important; color: #000 !important; }
 }
 </style>
 
-<div class="cv-container">
-  
-  <!-- MAIN HEADING -->
-  <div class="cv-section">
-    <h2>Curriculum Vitae</h2>
-    <div class="contact-info">
-      <div class="info-item"><strong>Address:</strong> 2301 S. Third St. Paul C.Lutz Hall, Room 419, University of Louisville, KY, USA</div>
-      <div class="info-item">
-        <strong>Email:</strong> 
-        <a href="mailto:mohamed.elsharkawy@louisville.edu">mohamed.elsharkawy@louisville.edu</a> 
-        | 
-        <a href="mailto:mohmed.elsharkawy@mans.edu.eg">mohmed.elsharkawy@mans.edu.eg</a>
+<div class="cv-wrap">
+
+  <!-- HERO -->
+  <section class="cv-hero">
+    <div class="cv-hero-inner">
+      <div>
+        <h1>Mohamed Elsharkawy, MSc</h1>
+        <div class="subtitle">
+          PhD Student (Computer Science & Engineering) • Graduate Teaching Assistant (Bioengineering) • University of Louisville
+        </div>
+
+        <div class="actions">
+          <a class="btn primary" href="/assets/files/elsharkawycv.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+          <a class="btn" href="/publications/">Publications</a>
+          <a class="btn" href="https://scholar.google.com/citations?user=IknnHU4AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        </div>
+
+        <div class="contact-grid" style="margin-top:14px;">
+          <div class="kv">
+            <div class="k">Address</div>
+            <div class="v">2301 S. Third St. Paul C. Lutz Hall, Room 419, University of Louisville, KY, USA</div>
+          </div>
+          <div class="kv">
+            <div class="k">Email</div>
+            <div class="v">
+              <a href="mailto:mohamed.elsharkawy@louisville.edu">mohamed.elsharkawy@louisville.edu</a><br/>
+              <a href="mailto:mohmed.elsharkawy@mans.edu.eg">mohmed.elsharkawy@mans.edu.eg</a>
+            </div>
+          </div>
+          <div class="kv">
+            <div class="k">Phone (USA)</div>
+            <div class="v">+1 502-885-0800</div>
+          </div>
+          <div class="kv">
+            <div class="k">Phone (Egypt)</div>
+            <div class="v">+20 1069662911</div>
+          </div>
+        </div>
       </div>
-      <div class="info-item"><strong>Phone (USA):</strong> +1 502-885-0800</div>
-      <div class="info-item"><strong>Phone (Egypt):</strong> +20 1069662911</div>
     </div>
-  </div>
+  </section>
 
-  <!-- RESEARCH INTERESTS -->
-  <div class="cv-section">
-    <h2>Research Interests</h2>
-    <ul class="interests-list">
-      <li>Medical Image Analysis</li>
-      <li>Machine Learning</li>
-      <li>Deep Learning</li>
-      <li>Image Segmentation</li>
-      <li>Computer Vision</li>
-    </ul>
-  </div>
+  <!-- CONTENT + TOC -->
+  <div class="cv-layout">
 
-  <!-- EDUCATION -->
-  <div class="cv-section">
-    <h2>Education</h2>
-    
-    <p class="cv-subtitle">Ph.D. (2023–Current)</p>
-    <p>
-      <em>University of Louisville, Louisville, KY</em><br/>
-      Thesis Advisors: Profs. Ayman El-Baz, Adel Elmaghraby
-    </p>
-    
-    <p class="cv-subtitle">M.Sc. (2016–2022)</p>
-    <p>
-      <em>University of Louisville (USA) jointly with Mansoura University (Egypt)</em><br/>
-      Thesis: <em>"Role of Machine Learning in Early Detection of Retinal Diseases"</em><br/>
-      Advisors: Profs. Ayman El-Baz, Ahmed Atwan, Eman Eldaydamoni
-    </p>
-    
-    <p class="cv-subtitle">B.S. (2011–2015)</p>
-    <p>
-      <em>Information Technology, Faculty of Computers and Information Sciences, Mansoura University (Egypt)</em><br/>
-      Senior Project: <em>"Smart Intensive Care Unit"</em><br/>
-      Cumulative Grade: Distinction with Degree of Honor (90.2%), GPA = 3.7<br/>
-      Department Rank: 1st among 160 students
-    </p>
-  </div>
+    <!-- MAIN CONTENT -->
+    <main>
 
-  <!-- TEACHING EXPERIENCE -->
-  <div class="cv-section">
-    <h2>Teaching Experience</h2>
-    
-    <h3>Mansoura University, Egypt (Mar 2015 – Present)</h3>
-    <ul>
-      <li>Prepared, delivered, and organized laboratory/tutorial sessions</li>
-      <li>Graded quizzes and mid-term exams</li>
-      <li>Assisted in teaching:
-        <ul>
-          <li>Logic Circuits</li>
-          <li>Electronic Fundamentals</li>
-          <li>Network Programming</li>
-          <li>Object-Oriented Programming</li>
-          <li>Mobile Computing</li>
-          <li>Fundamentals of Programming</li>
-          <li>Fundamentals of Statistics</li>
+      <!-- Research Interests -->
+      <section class="card" id="interests">
+        <div class="section-head">
+          <h2>Research Interests</h2>
+          <span class="badge">areas</span>
+        </div>
+        <div class="chips">
+          <span class="chip">Medical Image Analysis</span>
+          <span class="chip">Machine Learning</span>
+          <span class="chip">Deep Learning</span>
+          <span class="chip">Image Segmentation</span>
+          <span class="chip">Computer Vision</span>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="card" id="education" style="margin-top:16px;">
+        <div class="section-head">
+          <h2>Education</h2>
+          <span class="badge">degrees</span>
+        </div>
+
+        <div class="item">
+          <div class="top">
+            <div class="role">Ph.D. • University of Louisville</div>
+            <div class="dates">2023 – Present</div>
+          </div>
+          <div class="meta">Thesis Advisors: Profs. Ayman El-Baz, Adel Elmaghraby</div>
+        </div>
+
+        <div class="item">
+          <div class="top">
+            <div class="role">M.Sc. • University of Louisville (USA) + Mansoura University (Egypt)</div>
+            <div class="dates">2016 – 2022</div>
+          </div>
+          <div class="meta">
+            Thesis: <em>“Role of Machine Learning in Early Detection of Retinal Diseases”</em><br/>
+            Advisors: Profs. Ayman El-Baz, Ahmed Atwan, Eman Eldaydamoni
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="top">
+            <div class="role">B.S. • Information Technology • Mansoura University</div>
+            <div class="dates">2011 – 2015</div>
+          </div>
+          <div class="meta">
+            Senior Project: <em>“Smart Intensive Care Unit”</em><br/>
+            Cumulative Grade: Distinction with Degree of Honor (90.2%), GPA = 3.7<br/>
+            Department Rank: 1st among 160 students
+          </div>
+        </div>
+      </section>
+
+      <!-- Teaching -->
+      <section class="card" id="teaching" style="margin-top:16px;">
+        <div class="section-head">
+          <h2>Teaching Experience</h2>
+          <span class="badge">GTA / Lecturer</span>
+        </div>
+
+        <div class="item">
+          <div class="top">
+            <div class="role">Mansoura University, Egypt • Assistant Lecturer</div>
+            <div class="dates">Mar 2015 – Present</div>
+          </div>
+          <ul>
+            <li>Prepared, delivered, and organized laboratory/tutorial sessions</li>
+            <li>Graded quizzes and mid-term exams</li>
+          </ul>
+
+          <details>
+            <summary>Courses assisted</summary>
+            <ul>
+              <li>Logic Circuits</li>
+              <li>Electronic Fundamentals</li>
+              <li>Network Programming</li>
+              <li>Object-Oriented Programming</li>
+              <li>Mobile Computing</li>
+              <li>Fundamentals of Programming</li>
+              <li>Fundamentals of Statistics</li>
+            </ul>
+          </details>
+        </div>
+
+        <div class="item">
+          <div class="top">
+            <div class="role">University of Louisville, USA • Graduate Teaching Assistant</div>
+            <div class="dates">Jan 2023 – Present</div>
+          </div>
+          <ul>
+            <li>Prepared, delivered, and organized lab/tutorial sessions</li>
+            <li>Graded quizzes and mid-term exams</li>
+          </ul>
+
+          <details>
+            <summary>Undergraduate courses assisted</summary>
+            <ul>
+              <li>Bioengineering Measurements and Biosystems & Signals</li>
+              <li>Computer Tools for Medical Image Analysis</li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- Honors -->
+      <section class="card" id="honors" style="margin-top:16px;">
+        <div class="section-head">
+          <h2>Honors & Awards</h2>
+          <span class="badge">highlights</span>
+        </div>
+        <ul style="margin:0 0 0 18px;">
+          <li><strong>Exemplary Research Scholarship Award</strong>, University of Louisville (Apr 2024)</li>
+          <li><strong>Second Place</strong>, Doctoral Engineering Student Awards, Research! Louisville (Oct 2023)</li>
+          <li><strong>Best Dissertation Award</strong> (Master’s), Mansoura University (Jul 2023)</li>
+          <li><strong>Second Place</strong>, Master Engineering Student Awards, Research! Louisville (Sep 2021)</li>
+          <li><strong>Exemplary Research Scholarship Award</strong>, University of Louisville (Apr 2023)</li>
+          <li>Finalist, <strong>3-Minute Thesis (3MT)</strong>, University of Louisville (2023)</li>
+          <li><strong>Ranked first (Honors)</strong> in B.Sc. (2015), Mansoura University</li>
+          <li><strong>College excellence award</strong> for all four undergraduate years (2011–2015)</li>
         </ul>
-      </li>
-    </ul>
+      </section>
 
-    <hr/>
+      <!-- Profiles / Identifiers -->
+      <section class="card" id="profiles" style="margin-top:16px;">
+        <div class="section-head">
+          <h2>Research Profiles</h2>
+          <span class="badge">identifiers</span>
+        </div>
 
-    <h3>University of Louisville, USA (Jan 2023 – Present)</h3>
-    <ul>
-      <li>Prepared, delivered, and organized lab/tutorial sessions</li>
-      <li>Graded quizzes and mid-term exams</li>
-      <li>Assisted in teaching undergraduate courses:
-        <ul>
-          <li>Bioengineering Measurements and Biosystems & Signals</li>
-          <li>Computer Tools for Medical Image Analysis</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+        <div class="chips">
+          <a class="chip" href="https://scholar.google.com/citations?user=IknnHU4AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="chip" href="https://publons.com/researcher/2993425/mohamed-elsharkawy/" target="_blank" rel="noopener">Web of Science / Publons</a>
+          <a class="chip" href="https://www.scopus.com/authid/detail.uri?authorId=57217217044" target="_blank" rel="noopener">Scopus</a>
+          <a class="chip" href="https://www.researchgate.net/profile/Mohamed-Elsharkawy-11" target="_blank" rel="noopener">ResearchGate</a>
+          <a class="chip" href="https://mymans.mans.edu.eg/cv/4ce56d50-10b2-11ec-8d2b-a1fabb74302b/2" target="_blank" rel="noopener">Mansoura Univ. Profile</a>
+          <a class="chip" href="https://loop.frontiersin.org/people/1018324/overview" target="_blank" rel="noopener">Loop</a>
+          <a class="chip" href="https://orcid.org/0000-0001-9242-9709" target="_blank" rel="noopener">ORCID</a>
+        </div>
 
-  <!-- HONORS & AWARDS -->
-  <div class="cv-section">
-    <h2>Honors and Awards</h2>
-    <ul>
-      <li><strong>Exemplary Research Scholarship Award</strong>, University of Louisville (April 2024)</li>
-      <li><strong>Second Place</strong> Doctoral Engineering Student Awards, Research! Louisville (Oct 2023)</li>
-      <li><strong>Best Dissertation Award</strong> (Master's), Mansoura University (July 2023)</li>
-      <li><strong>Second Place</strong> Master Engineering Student Awards, Research! Louisville (Sept 2021)</li>
-      <li><strong>Exemplary Research Scholarship Award</strong>, University of Louisville (April 2023)</li>
-      <li>Finalist, <strong>3-Minute Thesis (3MT)</strong> Competition, University of Louisville (2023)</li>
-      <li><strong>Ranked first (Honors)</strong> in B.Sc. (2015), Mansoura University</li>
-      <li><strong>College excellence award</strong> for all four undergraduate years (2011–2015)</li>
-    </ul>
-  </div>
+        <p class="note">
+          For a full breakdown (journals, conferences, chapters), see the <a href="/publications/">Publications</a> page.
+        </p>
+      </section>
 
-  <!-- SCIENTIFIC PUBLICATIONS & IDENTIFIERS -->
-  <div class="cv-section">
-    <h2>Scientific Publications and Identifiers</h2>
-    <p>
-      I have authored/co-authored <strong>15+ peer-reviewed publications</strong> in top journals and conferences, mainly in the fields of medical image analysis, AI, and machine learning.
-    </p>
-    <ul>
-      <li><a href="https://scholar.google.com/citations?user=IknnHU4AAAAJ&hl=en" target="_blank">Google Scholar</a></li>
-      <li><a href="https://publons.com/researcher/2993425/mohamed-elsharkawy/" target="_blank">Web of Science / Publons</a></li>
-      <li><a href="https://www.scopus.com/authid/detail.uri?authorId=57217217044" target="_blank">Scopus</a></li>
-      <li><a href="https://www.researchgate.net/profile/Mohamed-Elsharkawy-11" target="_blank">ResearchGate</a></li>
-      <li><a href="https://mymans.mans.edu.eg/cv/4ce56d50-10b2-11ec-8d2b-a1fabb74302b/2" target="_blank">Mansoura University Profile</a></li>
-      <li><a href="https://loop.frontiersin.org/people/1018324/overview" target="_blank">Loop</a></li>
-      <li><a href="https://orcid.org/0000-0001-9242-9709" target="_blank">ORCID</a></li>
-    </ul>
-    <p>For a complete breakdown of publications (journals, conferences, etc.), please see the <a href="/publications/">Publications page</a>.</p>
-  </div>
+      <!-- Patents -->
+      <section class="card" id="patents" style="margin-top:16px;">
+        <div class="section-head">
+          <h2>Patents & Disclosures</h2>
+          <span class="badge">IP</span>
+        </div>
+        <div class="item">
+          <div class="top">
+            <div class="role">Assessment of Pulmonary Function in Coronavirus Patient</div>
+            <div class="dates">U.S. Patent Application #63/156,171</div>
+          </div>
+          <div class="meta">
+            <strong>M. Elsharkawy</strong>, A. El-Baz, A. Shalaby, A. Soliman, A. Sharafeldeen, A. Mahmoud, H. Sandhu, G. Giridharan. <br/>
+            <em>Status:</em> In Progress
+          </div>
+        </div>
+      </section>
 
-  <!-- PATENTS & DISCLOSURES -->
-  <div class="cv-section">
-    <h2>Patents and Disclosures</h2>
-    <ol>
-      <li>
-        <strong>M. Elsharkawy</strong>, A. El-Baz, A. Shalaby, A. Soliman, A. Sharafeldeen, A. Mahmoud, 
-        H. Sandhu, G. Giridharan. 
-        <em>"Assessment of Pulmonary Function in Coronavirus Patient,"</em> 
-        U.S. Patent Application #63/156,171 (In Progress)
-      </li>
-    </ol>
-  </div>
+      <!-- Service -->
+      <section class="card" id="service" style="margin-top:16px;">
+        <div class="section-head">
+          <h2>Professional Service</h2>
+          <span class="badge">reviewing</span>
+        </div>
 
-  <!-- PROFESSIONAL ACTIVITIES, SERVICE, AND AFFILIATIONS -->
-  <div class="cv-section">
-    <h2>Professional Activities, Service, and Affiliations</h2>
-    <p><strong>Reviewer</strong> for 15+ journals and conferences, including:</p>
-    <ul>
-      <li>IEEE Journal on Biomedical and Health Informatics</li>
-      <li><em>Scientific Reports</em></li>
-      <li><em>Artificial Intelligence in Medicine</em></li>
-      <li><em>Artificial Intelligence Review</em></li>
-      <li><em>Computers in Biology and Medicine</em></li>
-      <li><em>PLOS ONE</em></li>
-      <li><em>ISA Transactions</em></li>
-      <li><em>IEEE Access</em></li>
-      <li><em>Diagnostics</em></li>
-      <li>...plus major conferences like ICPR, MICCAI, ISBI</li>
-    </ul>
-  </div>
+        <p class="note" style="margin-top:0;">
+          Reviewer for journals and conferences in medical imaging and AI.
+        </p>
 
-  <!-- SOFTWARE & SKILLS -->
-  <div class="cv-section">
-    <h2>Software and Skills</h2>
-    <ul>
-      <li><strong>Programming:</strong> Python (highly competent), Matlab (very good), R</li>
-      <li><strong>Operating Systems:</strong> Windows</li>
-      <li><strong>Toolkits:</strong> Microsoft Office, LaTeX, Overleaf</li>
-    </ul>
-  </div>
+        <details>
+          <summary>Reviewer list (expand)</summary>
+          <ul style="margin:10px 0 0 18px;">
+            <li>IEEE Journal of Biomedical and Health Informatics</li>
+            <li><em>Scientific Reports</em></li>
+            <li><em>Artificial Intelligence in Medicine</em></li>
+            <li><em>Artificial Intelligence Review</em></li>
+            <li><em>Computers in Biology and Medicine</em></li>
+            <li><em>PLOS ONE</em></li>
+            <li><em>ISA Transactions</em></li>
+            <li><em>IEEE Access</em></li>
+            <li><em>Diagnostics</em></li>
+            <li>ICPR, MICCAI, ISBI (and related venues)</li>
+          </ul>
+        </details>
+      </section>
 
-  <!-- LANGUAGES -->
-  <div class="cv-section">
-    <h2>Languages</h2>
-    <ul>
-      <li><strong>Arabic:</strong> Native</li>
-      <li><strong>English:</strong> Very Good</li>
-    </ul>
-  </div>
+      <!-- Skills -->
+      <section class="card" id="skills" style="margin-top:16px;">
+        <div class="section-head">
+          <h2>Software & Skills</h2>
+          <span class="badge">tools</span>
+        </div>
 
-  <!-- ACTIVITIES & HOBBIES -->
-  <div class="cv-section">
-    <h2>Activities and Hobbies</h2>
-    <ul>
-      <li>Tennis</li>
-      <li>Soccer</li>
-      <li>Traveling</li>
-      <li>Social relationships</li>
-    </ul>
-  </div>
+        <div class="chips">
+          <span class="chip"><strong>Programming:</strong>&nbsp;Python, MATLAB, R</span>
+          <span class="chip"><strong>Tooling:</strong>&nbsp;LaTeX, Overleaf, Microsoft Office</span>
+          <span class="chip"><strong>OS:</strong>&nbsp;Windows</span>
+        </div>
+      </section>
 
-  <!-- REFERENCES -->
-  <div class="cv-section">
-    <h2>References</h2>
-    <p>Available upon request.</p>
+      <!-- Languages -->
+      <section class="card" id="languages" style="margin-top:16px;">
+        <div class="section-head">
+          <h2>Languages</h2>
+          <span class="badge">fluency</span>
+        </div>
+        <div class="chips">
+          <span class="chip"><strong>Arabic:</strong>&nbsp;Native</span>
+          <span class="chip"><strong>English:</strong>&nbsp;Very Good</span>
+        </div>
+      </section>
+
+      <!-- Hobbies -->
+      <section class="card" id="hobbies" style="margin-top:16px;">
+        <div class="section-head">
+          <h2>Activities & Hobbies</h2>
+          <span class="badge">personal</span>
+        </div>
+        <div class="chips">
+          <span class="chip">Tennis</span>
+          <span class="chip">Soccer</span>
+          <span class="chip">Traveling</span>
+          <span class="chip">Social relationships</span>
+        </div>
+      </section>
+
+      <!-- References -->
+      <section class="card" id="references" style="margin-top:16px;">
+        <div class="section-head">
+          <h2>References</h2>
+          <span class="badge">available</span>
+        </div>
+        <p class="note" style="margin-top:0;">Available upon request.</p>
+      </section>
+
+    </main>
+
+    <!-- TOC -->
+    <aside class="card toc">
+      <h2>On this page</h2>
+      <a href="#interests">Research Interests</a>
+      <a href="#education">Education</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#honors">Honors & Awards</a>
+      <a href="#profiles">Research Profiles</a>
+      <a href="#patents">Patents</a>
+      <a href="#service">Professional Service</a>
+      <a href="#skills">Software & Skills</a>
+      <a href="#languages">Languages</a>
+      <a href="#hobbies">Activities & Hobbies</a>
+      <a href="#references">References</a>
+    </aside>
+
   </div>
 </div>
